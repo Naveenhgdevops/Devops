@@ -9,9 +9,9 @@ pipeline {
             }
         }
         
-        stage('Test') {
+        stage('QA') {
             steps {
-                echo 'Testing...'
+                echo 'QA Testing using SOnarQube...'
                 // Add testing steps here, e.g., run unit tests
             }
         }
