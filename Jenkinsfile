@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'javabuild'
+    }
     tools {
         maven 'localMaven'
     }
@@ -19,7 +21,7 @@ pipeline {
                 parallel{
                     stage('Deploy to Tomcat Server'){
                         steps{
-                            deploy adapters: [tomcat9(credentialsId: 'tomcat-b12', path: '', url: 'http://15.206.167.147:8080/')], contextPath: null, war: '**/*.war'
+                            deploy adapters: [tomcat9(credentialsId: 'tomcat-b12', path: '', url: 'http://3.108.62.60:8080/')], contextPath: null, war: '**/*.war'
                         }
                     }
 
